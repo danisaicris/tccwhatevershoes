@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/sidebar-navbar.css">
+    <link rel="stylesheet" href="../CSS/painel.css">
+    <link rel="stylesheet" href="../CSS/style_pattern.css">
+    <link rel="stylesheet" href="../CSS/modals.css">
+</head>
+
+<body>
+
+    <header>
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div id="list-and-log-off" class="position-sticky">
+                <div id="list_itens" class="list-group list-group-flush mt-4">
+
+                    <a href="produtos.html" class="list-group-item list-group-item-action py-2 58 ">
+                        <img src="../images/prods.png" alt="" height="40">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Produtos</span>
+                    </a>
+                    <a href="funcionário.html" class="list-group-item list-group-item-action py-2 ripple">
+                        <img src="../images/carteira-de-identidade.png  " alt="" height="40">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Funcionário</span>
+                    </a>
+                </div>
+                <div id="log_off" class="center_itens">
+                    <a href="../index.html"><input class="btn" type="submit" value="Sair"></a>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="main-navbar" class="navbar  navbar-light  fixed-top">
+            <div class="change_navbar">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/high-heels.png" height="35" alt="" />
+                    <a id="link_null">Whatever Shoes</a>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 98px;">
+        <div id="tela_funcionario" class="content">
+            <div class="title_main center_itens">
+                <h1>Painel de Funcionário</h1>
+            </div>
+            <div class="form">
+                <button class="button btn" type="submit" onclick="" data-toggle="modal" data-bs-toggle="modal"
+                    data-bs-target="#create_func">Novo Funcionário</button>
+
+
+
+
+
+
+                <div class="modal fade " id="create_func" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-funcionario">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Funcionário</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-funcionario">
+                                <form class="data_inputs">
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Nome</label>
+                                            <input type="search" class="form-control" id="formGroupExampleInput"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput3">Senha</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput3"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="função">Função</label>
+                                            <select id="função" name="tamanho" class="form-control cria_função"
+                                                onchange="adicionarComissao()">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Atendente">Atendente</option>
+                                                <option value="Caixa">Caixa</option>
+                                                <option value="Gerente">Gerente</option>
+                                                <option value="Assistente Administrativo">Assistente Administrativo
+                                                </option>
+                                                <option value="Estoquista">Estoquista</option>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput9">Email</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput9"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sexo">Sexo</label>
+                                            <select id="sexo" name="sexo" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Feminino">Feminino</option>
+                                                <option value="Masculino">Masculino</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInpu6">Salário</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInpu6"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input_comissão">Comissão %</label>
+                                            <input type="text" class="form-control input_comissão" id="input_comissão"
+                                                placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput8">Data Admissão</label>
+                                            <input type="date" class="form-control" id="formGroupExampleInput8"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput9">Data Desligamento</label>
+                                            <input type="date" class="form-control" id="formGroupExampleInput9"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Status">Status</label>
+                                            <select id="sexo" name="sexo" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Feminino">Inativo</option>
+                                                <option value="Masculino">Ativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="close-modal-venda btn-pattern " data-bs-dismiss="modal">
+                                    <strong>Cancelar</strong></button>
+                                <button type="button" class="save-modal-venda btn-pattern "> <strong>
+                                        Salvar</strong></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="search input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Filtre por Id/Data/Status"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="filter-btn btn" type="button">Filtrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="functionalities">
+                <button type="button" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    class="btn-func" id="btn_delete"> <img class="img_btn" src="../../images/lixeira-de-reciclagem.png"
+                        alt="">
+
+                    Deletar
+                </button>
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header header-del-modal">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Funcionário</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body body-del-modal">
+                                <ul>
+                                    <li>Ter certeza que dejesa excluir esse <strong>funcionário</strong>?</li>
+                                    <li>Você perderá todos os dados desse funcionário de <strong>"Forma
+                                            Permanente"</strong></li>
+
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn " id="btn_not" data-bs-dismiss="modal"> <strong>
+                                        NÃO</strong></button>
+                                <button type="button" class="btn " id="btn_yes"> <strong> SIM</strong></button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </button>
+                <button class="btn-func" id="" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#edit_func">
+                    <img class="img_btn " src="../../images/contrato.png" alt="">
+
+                    Editar
+                </button>
+                <div class="modal fade " id="edit_func" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-funcionario">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Funcionário</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-funcionario">
+                                <form class="data_inputs">
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Nome</label>
+                                            <input type="search" class="form-control" id="formGroupExampleInput"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput3">Senha</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput3"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="função">Função</label>
+                                            <select id="função_2" name="tamanho" class="form-control cria_função"
+                                                onchange="editarComissao()">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Atendente">Atendente</option>
+                                                <option value="Caixa">Caixa</option>
+                                                <option value="Gerente">Gerente</option>
+                                                <option value="Assistente Administrativo">Assistente Administrativo
+                                                </option>
+                                                <option value="Estoquista">Estoquista</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput9">Email</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput9"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sexo">Sexo</label>
+                                            <select id="sexo" name="sexo" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Feminino">Feminino</option>
+                                                <option value="Masculino">Masculino</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInpu6">Salário</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInpu6"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input_comissão_2">Comissão %</label>
+                                            <input type="text" class="form-control input_comissão" id="input_comissão_2"
+                                                placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput8">Data Admissão</label>
+                                            <input type="date" class="form-control" id="formGroupExampleInput8"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput9">Data Desligamento</label>
+                                            <input type="date" class="form-control" id="formGroupExampleInput9"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Status">Status</label>
+                                            <select id="sexo" name="sexo" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="Feminino">Inativo</option>
+                                                <option value="Masculino">Ativo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="close-modal-venda btn-pattern " data-bs-dismiss="modal">
+                                    <strong>Cancelar</strong></button>
+                                <button type="button" class="save-modal-venda btn-pattern "> <strong>
+                                        Salvar</strong></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead class="col">
+                    <tr class="header center_itens">
+                        <th id="th_1" scope="col"></th>
+                        <th id="th_2" scope="col">Id</th>
+                        <th id="th_3" scope="col">Nome</th>
+                        <th id="th_4" scope="col">Status</th>
+                        <th id="th_5" scope="col">Senha</th>
+                        <th id="th_6" scope="col">Função</th>
+                        <th id="th_7" scope="col">Sexo</th>
+                        <th id="th_8" scope="col">Email</th>
+                        <th id="th_9" scope="col">Salário</th>
+                        <th id="th_10" scope="col">Comissão</th>
+                        <th id="th_11" scope="col">Dt_Admi.</th>
+                        <th id="th_12" scope="col">Dt_Demis.</th>
+                    </tr>
+                </thead>
+
+                <tbody class="body-table center_itens">
+                </tbody>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+    <script src="../JS/funcionario.js"> </script>
+
+</body>
+
+</html>

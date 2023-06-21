@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/sidebar-navbar.css">
+    <link rel="stylesheet" href="../CSS/painel.css">
+    <link rel="stylesheet" href="../CSS/style_pattern.css">
+    <link rel="stylesheet" href="../CSS/modals.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div id="list-and-log-off" class="position-sticky">
+                <div id="list_itens" class="list-group list-group-flush mt-4">
+                    <!-- Lista das Funcionalidade-->
+
+                    <a href="produtos.html" class="list-group-item list-group-item-action py-2 58 ">
+                        <img src="../images/prods.png" alt="" height="40">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Produtos</span>
+                    </a>
+                    <a href="funcionário.html" class="list-group-item list-group-item-action py-2 ripple">
+                        <img src="../images/carteira-de-identidade.png  " alt="" height="40">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Funcionário</span>
+                    </a>
+                </div>
+                <div id="log_off" class="center_itens">
+                    <a href="../index.html"><input class="btn" type="submit" value="Sair"></a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar  navbar-light  fixed-top">
+            <div class="change_navbar">
+                <!-- Logo/Nome da Loja -->
+                <a class="navbar-brand" href="#">
+                    <img src="../images/high-heels.png" height="35" alt="" />
+                    <a id="link_null">Whatever Shoes</a>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main style="margin-top: 98px;">
+        <div class="content">
+            <div class="title_main center_itens">
+                <h1>Painel de Produtos</h1>
+            </div>
+            <div class="form">
+                <button class="button btn" type="submit" data-toggle="modal" data-bs-toggle="modal"
+                    data-bs-target="#create_produto" onclick="">Novo Produto</button>
+                <div class="modal fade" id="create_produto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-produto">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Produto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-produto">
+                                <div class="data_inputs">
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Descrição Produto</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput"
+                                                placeholder="" maxlength="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Preço de Venda</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput3">Preço de Custo</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput3"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput4">Marca</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput4"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="estante">Estante</label>
+                                            <select id="estante" name="estante[]" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="A1">A1</option>
+                                                <option value="A2">A2</option>
+                                                <option value="A3">A3</option>
+                                                <option value="A4">A4</option>
+                                                <option value="A5">A5</option>
+                                                <option value="B1">B1</option>
+                                                <option value="B2">B2</option>
+                                                <option value="B3">B3</option>
+                                                <option value="B4">B4</option>
+                                                <option value="B5">B5</option>
+                                                <option value="C1">C1</option>
+                                                <option value="C2">C2</option>
+                                                <option value="C3">C3</option>
+                                                <option value="C4">C4</option>
+                                                <option value="C5">C5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput5">Quantidade Disponível</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput6"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cor">Cor</label>
+                                            <select id="cores1" name="cores[]" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="azul">Azul</option>
+                                                <option value="verde">Verde</option>
+                                                <option value="vermelho">Vermelho</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tamanho">Tamanho</label>
+                                            <select id="tamanho" name="tamanho" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="close-modal-venda btn-pattern " data-bs-dismiss="modal">
+                                    <strong>Cancelar</strong></button>
+                                <button type="button" class="save-modal-venda btn-pattern "> <strong>
+                                        Salvar</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Filtre por Id/Descrição/Status"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="filter-btn btn" type="button" onclick="lista_produtos()">Filtrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="functionalities">
+                <button type="button" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#del-produto"
+                    class="btn-func" id="btn_delete"> <img class="img_btn" src="../../images/lixeira-de-reciclagem.png"
+                        alt="">
+
+                    Deletar
+                </button>
+                <div class="modal fade " id="del-produto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header header-del-modal">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Produto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body body-del-modal">
+                                <ul>
+                                    <li>Ter certeza que dejesa excluir esse <strong>Produtos</strong>? </li>
+                                    <li>Você perderá todos os dados do produto de <strong>"Forma Permanente"</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn " id="btn_not" data-bs-dismiss="modal"> <strong>
+                                        NÃO</strong></button>
+                                <button type="button" class="btn " id="btn_yes"> <strong> SIM</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </button>
+                <button class="btn-func" id="" data-toggle="modal" data-bs-toggle="modal"
+                    data-bs-target="#edit_produto"> <img class="img_btn " src="../../images/contrato.png" alt="">
+
+                    Editar
+                </button>
+                <div class="modal fade" id="edit_produto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-produto">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Produto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-produto">
+                                <div class="data_inputs">
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput8">Descrição Produto</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput8"
+                                                placeholder="" maxlength="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput9">Preço de Venda</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput9"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInpu10">Preço de Custo</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInpu10"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput11">Marca</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput11"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group">
+                                            <label for="estante2">Estante</label>
+                                            <select id="estante2" name="estante[]" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="A1">A1</option>
+                                                <option value="A2">A2</option>
+                                                <option value="A3">A3</option>
+                                                <option value="A4">A4</option>
+                                                <option value="A5">A5</option>
+                                                <option value="B1">B1</option>
+                                                <option value="B2">B2</option>
+                                                <option value="B3">B3</option>
+                                                <option value="B4">B4</option>
+                                                <option value="B5">B5</option>
+                                                <option value="C1">C1</option>
+                                                <option value="C2">C2</option>
+                                                <option value="C3">C3</option>
+                                                <option value="C4">C4</option>
+                                                <option value="C5">C5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput13">Quantidade Disponível</label>
+                                            <input type="number" class="form-control" id="formGroupExampleInput13"
+                                                placeholder="" min="0" max="999">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cores2">Cor</label>
+                                            <select id="cores2" name="cores[]" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="azul">Azul</option>
+                                                <option value="verde">Verde</option>
+                                                <option value="vermelho">Vermelho</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tamanho2">Tamanho</label>
+                                            <select id="tamanho2" name="tamanho" class="form-control">
+                                                <option value="" selected disabled hidden></option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="close-modal-venda btn-pattern " data-bs-dismiss="modal">
+                                    <strong>Cancelar</strong></button>
+                                <button type="button" class="save-modal-venda btn-pattern "> <strong>
+                                        Salvar</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <thead class="col">
+                    <tr class="header center_itens">
+                        <th id="th_1" scope="col"></th>
+                        <th id="th_2" scope="col">Id</th>
+                        <th id="th_3" scope="col">Descrição</th>
+                        <th id="th_4" scope="col">Preço V.</th>
+                        <th id="th_5" scope="col">Preço C.</th>
+                        <th id="th_6" scope="col">Marca</th>
+                        <th id="th_7" scope="col">Estante</th>
+                        <th id="th_8" scope="col">Qtde</th>
+                        <th id="th_9" scope="col">Cor</th>
+                        <th id="th_10" scope="col">Tam.</th>
+                    </tr>
+                </thead>
+
+                <tbody class="body-table center_itens">
+                </tbody>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+    <script src="../JS/produto.js"></script>
+</body>
+
+</html>
